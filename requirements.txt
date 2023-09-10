@@ -3,3 +3,5 @@ django-extensions
 djangorestframework
 drf-yasg
 pydotplus
+pytest
+pytest-django
