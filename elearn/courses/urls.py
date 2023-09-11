@@ -15,18 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
-from .views import schema_view
+from rest_framework import routers
 
+from .views import CourseViewSet
 
-urlpatterns = [
-    path(
-        "docs/",
-        schema_view.with_ui("swagger", cache_timeout=0),
-        name="schema-swagger-ui",
-    ),
-    path("admin/", admin.site.urls),
-    path("api/", include("courses.urls")),
-    path('accounts/', include('django.contrib.auth.urls')),
-]
+router = routers.SimpleRouter()
+router.register("courses", CourseViewSet, "elearn-courses")
+
+urlpatterns = router.urls
