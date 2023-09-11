@@ -1,6 +1,0 @@
-[tool.pytest.ini_options]
-addopts = "--rootdir elearn -s -vv --import-mode importlib"
-testpaths = [
-    "elearn/tests",
-]
-DJANGO_SETTINGS_MODULE = "elearn.settings_test"
