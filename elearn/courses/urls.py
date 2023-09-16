@@ -19,9 +19,10 @@ from django.urls import path
 
 from rest_framework import routers
 
-from .views import CourseViewSet
+from . import views
 
 router = routers.SimpleRouter()
-router.register("courses", CourseViewSet, "elearn-courses")
+router.register("subjects", views.SubjectViewSet, "elearn-subjects")
+router.register("courses", views.CourseViewSet, "elearn-courses")
 
 urlpatterns = router.urls
